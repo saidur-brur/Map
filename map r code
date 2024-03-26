@@ -1,0 +1,62 @@
+#best code
+library(bangladesh)
+
+#install.packages("remotes")
+
+# Load the 'remotes' package
+library(remotes)
+library(bangladesh)
+
+bd_plot("country")
+bd_plot("division")
+
+Rangpur <- get_divisions(divisions = "Rangpur",level =  "district")
+ 
+## single division
+library(ggplot2)
+ggplot(data = Rangpur) +
+  geom_sf() +
+  xlab("")+ ylab("")+
+  theme_minimal()
+
+ggplot(data = Rangpur) +
+  geom_sf(aes(fill = District)) +  # Fill each district with a different color based on District column
+  xlab("") + ylab("") +
+  theme_minimal()
+
+
+
+#extra
+remotes::install_github("ovirahman/bangladesh")
+library(bangladesh)
+
+#install.packages("remotes")
+
+# Load the 'remotes' package
+library(remotes)
+library(bangladesh)
+
+bd_plot("country")
+bd_plot("division")
+bd_plot("district")
+
+Rangpur <- get_divisions(divisions = "Rangpur",level =  "district")
+# single division
+library(ggplot2)
+ggplot(data = Rangpur) +
+  geom_sf() +
+  xlab("")+ ylab("")+
+  theme_minimal()
+
+library(ggplot2)
+str(Rangpur)
+colnames(Rangpur)
+ggplot(data = Rangpur) +
+  geom_sf(aes(fill = district_name)) +  # Fill each district with a different color based on district_name
+  xlab("") + ylab("") +
+  theme_minimal()
+
+ggplot(data = Rangpur) +
+  geom_sf(aes(fill = District)) +  # Fill each district with a different color based on District column
+  xlab("") + ylab("") +
+  theme_minimal()
